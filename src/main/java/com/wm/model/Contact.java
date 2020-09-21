@@ -1,17 +1,46 @@
 package com.wm.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "contact", schema="salesforce")
 public class Contact {
 
     @Id
     @GeneratedValue
     private Long id;
+    @Column(name = "Name")
     private String name;
-    private int age;
+    
+    @Column(name = "sfid")
+    private String conSFDC;
+    
+    @Column(name = "Customer_Id__c")
+    private String cusId;
+    
+    public String getCusId() {
+		return cusId;
+	}
+
+	public void setCusId(String cusId) {
+		this.cusId = cusId;
+	}
+
+	public String getConSFDC() {
+		return conSFDC;
+	}
+
+	public void setConSFDC(String conSFDC) {
+		this.conSFDC = conSFDC;
+	}
+
+	
+    
+
 
 
     public Long getId() {
@@ -30,16 +59,8 @@ public class Contact {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     @Override
     public String toString() {
-        return String.format("Person{id=%d, name='%s', age=%d}", id, name, age);
+        return String.format("Person{id=%d, name='%s'}", id, name);
     }
 }
