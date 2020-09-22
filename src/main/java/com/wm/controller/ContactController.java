@@ -46,15 +46,15 @@ public class ContactController {
 		}
 		
 		@RequestMapping(value = "/test3", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
-		public List<WrapperIndividual> home3() {
+		public Contact home3() {
 			
-			String custId =10001
-			Contact con=contactService.getContactBycustId(10001);
+			String custId ="10001";
+			Contact con=contactService.getContactBycustId(custId);
 				
-			// String indSFID=con.getindivisualID();
-			//Individual individual = individualService.getIndividualsbySFID(indSFID);
+			/* String indSFID=con.getindivisualID();
+			Individual individual = individualService.getIndividualsbySFID(indSFID);
 			
-			/*
+			
 			List<WrapperIndividual> WrapperIndividual = new ArrayList<WrapperIndividual>();
 			      WrapperIndividual obj = new WrapperIndividual();
 					obj.setCusId();
@@ -62,9 +62,9 @@ public class ContactController {
 					obj.setName("James");
 					obj.setShouldforget("TRUE");
 			
-			*/
 			
-			/*List<WrapperIndividual> WrapperIndividual = new ArrayList<WrapperIndividual>();
+			
+			List<WrapperIndividual> WrapperIndividual = new ArrayList<WrapperIndividual>();
 			List<Individual> indiviList = individualService.getAllIndividuals();
 			List<Contact> conList = contactService.getAllContacts();
 			for( Contact con:conList) {
