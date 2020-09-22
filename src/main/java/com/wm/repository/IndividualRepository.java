@@ -6,5 +6,6 @@ import com.wm.model.Individual;
 
 @Repository
 public interface IndividualRepository extends JpaRepository<Individual, Long> {
+  Individual findByindSFID(String sfid);
 
 }
