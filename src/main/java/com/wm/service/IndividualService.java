@@ -9,6 +9,7 @@ public interface IndividualService {
   //  Contact createContact(Contact person);
 
     public List<Individual> getAllIndividuals();
+   public Individual findByindSFID(String sfid);
 
   //  long countContacts();
 
