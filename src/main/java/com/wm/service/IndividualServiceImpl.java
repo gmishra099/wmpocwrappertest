@@ -11,12 +11,17 @@ import com.wm.repository.IndividualRepository;
 @Service
 public class IndividualServiceImpl implements IndividualService  {
 	
-	@Autowired
-    private IndividualRepository individualRepository;
+@Autowired
+   private IndividualRepository individualRepository;
 	
-	@Override
+@Override
     public List<Individual> getAllIndividuals() {
         return individualRepository.findAll();
+    }
+
+ @Override
+    public Individual findByindSFID(String sfid) {
+        return individualRepository.findByindSFID(sfid);
     }
 
 }
