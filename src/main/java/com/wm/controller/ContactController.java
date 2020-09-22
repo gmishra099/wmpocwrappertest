@@ -85,10 +85,18 @@ public class ContactController {
 			Contact obj=con.get();
 			return obj;
 		}
-		@RequestMapping(value = "/test5", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
-		public Contact home5() {
+		
+	      @RequestMapping(value = "/test5", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+		public WrapperIndividual home5() {
 			Contact con=contactService.findByCustId("10001");
-			return con;
+			String indSFID= con.getIndividualid();
+			Individual ind=individualService.findByindSFID(indSFID);
+			WrapperIndividual obj = new WrapperIndividual();
+			obj.setCusId(con.getCusId());
+			obj.setHasoptedouttracking(ind.getHasoptedouttracking());
+			obj.setName(ind.getName());
+			obj.setShouldforget(ind.getShouldforget());
+			return obj;
 		}
 
 	
