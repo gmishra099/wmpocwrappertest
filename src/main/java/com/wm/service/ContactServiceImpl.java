@@ -39,6 +39,12 @@ public class ContactServiceImpl implements ContactService {
        
     }
     
+    @Override
+    public Contact findByCustId(String custID){
+        return contactRepository.findBycusId(custID);
+       
+    }
+    
     
     
 }
