@@ -9,6 +9,7 @@ public interface ContactService {
     Contact createContact(Contact person);
 
     public List<Contact> getAllContacts();
+    public Contact getContactBycustId(String customerId);
 
     long countContacts();
 }
