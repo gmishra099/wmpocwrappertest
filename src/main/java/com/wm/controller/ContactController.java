@@ -45,14 +45,7 @@ public class ContactController {
 			return individualService.getAllIndividuals();
 		}
 				
-	       @RequestMapping(value = "/test4", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
-		public Optional<Contact> home4() {
-			
-			String str ="10001";
-			long Id = Long.parseLong(str);
-			Optional<Contact> con=contactService.getContactById(Id);
-			return con;
-		}
+
 
 	
 }
