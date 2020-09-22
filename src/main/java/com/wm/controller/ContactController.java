@@ -79,10 +79,11 @@ public class ContactController {
 		}
 		
 		@RequestMapping(value = "/test4", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
-		public Optional<Contact> home4() {
+		public Contact home4() {
 			long Id = 21;
 			Optional<Contact> con=contactService.getContactById(Id);
-			return con;
+			Contact obj=con.get();
+			return obj;
 		}
 
 	
