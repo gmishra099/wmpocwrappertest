@@ -52,18 +52,17 @@ public class ContactController {
 			List<Individual> indiviList = individualService.getAllIndividuals();
 			List<Contact> conList = contactService.getAllContacts();
 			for( Contact con:conList) {
-				for(Individual indivi:indiviList) {
-
+				
 				if(con.getCusId()=="10001") {
 					WrapperIndividual obj = new WrapperIndividual();
 					obj.setCusId("10001");;
-					obj.setHasoptedouttracking(indivi.getHasoptedouttracking());
-					obj.setName(indivi.getName());
-					obj.setName(indivi.getShouldforget());
+					obj.setHasoptedouttracking("TRUE");
+					obj.setName("James");
+					obj.setShouldforget("TRUE");
 					WrapperIndividual.add(obj);
 				}
 					
-				}
+				
 				
 			}
 			
