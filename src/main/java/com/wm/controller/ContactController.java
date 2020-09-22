@@ -44,51 +44,13 @@ public class ContactController {
 			//contactService.getAllContacts();
 			return individualService.getAllIndividuals();
 		}
-		
-		@RequestMapping(value = "/test3", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
-		public Contact home3() {
-			
-			String custId ="10001";
-			Contact con=contactService.getContactBycustId(custId);
 				
-			/* String indSFID=con.getindivisualID();
-			Individual individual = individualService.getIndividualsbySFID(indSFID);
+	       @RequestMapping(value = "/test4", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+		public Optional<Contact> home4() {
 			
-			
-			List<WrapperIndividual> WrapperIndividual = new ArrayList<WrapperIndividual>();
-			      WrapperIndividual obj = new WrapperIndividual();
-					obj.setCusId();
-					obj.setHasoptedouttracking("TRUE");
-					obj.setName("James");
-					obj.setShouldforget("TRUE");
-			
-			
-			
-			List<WrapperIndividual> WrapperIndividual = new ArrayList<WrapperIndividual>();
-			List<Individual> indiviList = individualService.getAllIndividuals();
-			List<Contact> conList = contactService.getAllContacts();
-			for( Contact con:conList) {
-				System.out.println("test inside conlist");
-				if(con.getCusId() != null){
-					if(con.getCusId().equals("10001")) {
-					System.out.println("test inside 10001");
-					WrapperIndividual obj = new WrapperIndividual();
-					obj.setCusId("10001");;
-					obj.setHasoptedouttracking("TRUE");
-					obj.setName("James");
-					obj.setShouldforget("TRUE");
-					WrapperIndividual.add(obj);
-				
-				}
-				}
-	
-				
-				
-			}
-			
-			
-			return WrapperIndividual;*/
-			
+			String str ="10001";
+			long Id = Long.parseLong(str);
+			Optional<Contact> con=contactService.getContactById(Id);
 			return con;
 		}
 
