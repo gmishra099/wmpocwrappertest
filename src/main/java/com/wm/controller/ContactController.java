@@ -53,7 +53,8 @@ public class ContactController {
 			List<Contact> conList = contactService.getAllContacts();
 			for( Contact con:conList) {
 				System.out.println("test inside conlist");
-				if(con.getCusId().equals("10001")) {
+				if(!con.getCusId()){
+					if(con.getCusId().equals("10001")) {
 					System.out.println("test inside 10001");
 					WrapperIndividual obj = new WrapperIndividual();
 					obj.setCusId("10001");;
@@ -62,7 +63,9 @@ public class ContactController {
 					obj.setShouldforget("TRUE");
 					WrapperIndividual.add(obj);
 				
-				}	
+				}
+				}
+	
 				
 				
 			}
