@@ -47,8 +47,13 @@ public class ContactController {
 		
 		@RequestMapping(value = "/test3", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 		public List<WrapperIndividual> home3() {
-			List<WrapperIndividual> WrapperIndividual = new ArrayList<WrapperIndividual>();
 			
+			// String custId =10001
+			//contact con=getContactBycustId(10001)
+			// String indSFID=con.getindivisualID();
+			//Individual individual = individualService.getIndividualsbySFID(indSFID);
+			
+			List<WrapperIndividual> WrapperIndividual = new ArrayList<WrapperIndividual>();
 			List<Individual> indiviList = individualService.getAllIndividuals();
 			List<Contact> conList = contactService.getAllContacts();
 			for( Contact con:conList) {
