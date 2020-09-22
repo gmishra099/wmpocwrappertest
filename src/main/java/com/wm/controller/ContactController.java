@@ -2,6 +2,7 @@ package com.wm.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -40,12 +41,51 @@ public class ContactController {
 		
 		@RequestMapping(value = "/test2", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 		public List<Individual> home2() {
-			//System.out.println("test");
+			 
 			//contactService.getAllContacts();
 			return individualService.getAllIndividuals();
 		}
-				
+		
+		@RequestMapping(value = "/test3", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+		public List<WrapperIndividual> home3() {
+			List<WrapperIndividual> WrapperIndividual = new ArrayList<WrapperIndividual>();
+			
+			List<Individual> indiviList = individualService.getAllIndividuals();
+			List<Contact> conList = contactService.getAllContacts();
+			
+			for( Contact con:conList) {
+				for(Individual indivi:indiviList) {
+					if( con.getCusId() != null) {
+						
+						if(con.getCusId().equals("10001")) {
+							WrapperIndividual obj = new WrapperIndividual();
+							obj.setCusId("10001");;
+							obj.setHasoptedouttracking(indivi.getHasoptedouttracking());
+							obj.setName(indivi.getName());
+							obj.setShouldforget(indivi.getShouldforget());
+							WrapperIndividual.add(obj);
+						}
+							
+						
+					}
 
+
+				}
+				
+			}
+			
+			
+			return WrapperIndividual;
+		}
+		
+		@RequestMapping(value = "/test4", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+		public Optional<Contact> home4() {
+			
+			String str ="10001";
+			long Id = Long.parseLong(str);
+			Optional<Contact> con=contactService.getContactById(Id);
+			return con;
+		}
 
 	
 }
