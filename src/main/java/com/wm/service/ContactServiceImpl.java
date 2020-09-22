@@ -29,7 +29,9 @@ public class ContactServiceImpl implements ContactService {
         return contactRepository.count();
     }
     @Override
-    public Contact getContactBycustId(String customerId){
-        return contactRepository.getContactByCustomer_Id__c(customerId);
+    public Optional<Contact> getContactById(Long id){
+        return contactRepository.findById(id);
+        
+       
     }
 }
