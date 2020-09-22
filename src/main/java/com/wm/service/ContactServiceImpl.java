@@ -1,5 +1,6 @@
 package com.wm.service;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,15 +24,21 @@ public class ContactServiceImpl implements ContactService {
     public List<Contact> getAllContacts() {
         return contactRepository.findAll();
     }
+    
+   
 
     @Override
     public long countContacts() {
         return contactRepository.count();
     }
+    
     @Override
     public Optional<Contact> getContactById(Long id){
         return contactRepository.findById(id);
         
        
     }
+    
+    
+    
 }
