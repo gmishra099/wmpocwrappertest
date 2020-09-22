@@ -53,6 +53,16 @@ public class ContactController {
 			// String indSFID=con.getindivisualID();
 			//Individual individual = individualService.getIndividualsbySFID(indSFID);
 			
+			/*
+			List<WrapperIndividual> WrapperIndividual = new ArrayList<WrapperIndividual>();
+			      WrapperIndividual obj = new WrapperIndividual();
+					obj.setCusId();
+					obj.setHasoptedouttracking("TRUE");
+					obj.setName("James");
+					obj.setShouldforget("TRUE");
+			
+			*/
+			
 			List<WrapperIndividual> WrapperIndividual = new ArrayList<WrapperIndividual>();
 			List<Individual> indiviList = individualService.getAllIndividuals();
 			List<Contact> conList = contactService.getAllContacts();
