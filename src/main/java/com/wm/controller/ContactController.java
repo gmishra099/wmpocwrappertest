@@ -80,8 +80,7 @@ public class ContactController {
 		
 		@RequestMapping(value = "/test4", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 		public Contact home4() {
-			String cusId ="10001";
-			long Id=Long.parseLong(cusId);
+			long Id = 21;
 			Optional<Contact> con=contactService.getContactById(Id);
 			Contact obj=con.get();
 			return obj;
