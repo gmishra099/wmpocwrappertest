@@ -30,6 +30,6 @@ public class ContactServiceImpl implements ContactService {
     }
     @Override
     public Contact getContactBycustId(String customerId){
-        contactRepository.getContactByCustomer_Id__c(customerId);
+        return contactRepository.getContactByCustomer_Id__c(customerId);
     }
 }
