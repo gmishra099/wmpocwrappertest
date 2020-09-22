@@ -22,6 +22,19 @@ public class Contact {
     @Column(name = "Customer_Id__c")
     private String cusId;
     
+    @Column(name = "Individualid")
+    private String  Individualid;
+    
+
+	public String getIndividualid() {
+		return Individualid;
+	}
+
+
+	public void setIndividualid(String individualid) {
+		Individualid = individualid;
+	}   
+	
     public String getCusId() {
 		return cusId;
 	}
