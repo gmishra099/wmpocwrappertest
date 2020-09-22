@@ -85,6 +85,11 @@ public class ContactController {
 			Contact obj=con.get();
 			return obj;
 		}
+		@RequestMapping(value = "/test5", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+		public Contact home5() {
+			Contact con=contactService.findByCustId("10001");
+			return con;
+		}
 
 	
 }
