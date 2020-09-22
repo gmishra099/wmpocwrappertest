@@ -13,4 +13,5 @@ public interface ContactService {
 
     long countContacts();
     public Optional<Contact> getContactById(Long Id);
+    public Contact findByCustId(String custID);
 }
