@@ -87,7 +87,7 @@ public class ContactController {
 			}
 			
 			
-			return WrapperIndividual;/*
+			return WrapperIndividual;*/
 			
 			return con;
 		}
