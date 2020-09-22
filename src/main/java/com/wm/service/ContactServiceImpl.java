@@ -28,4 +28,8 @@ public class ContactServiceImpl implements ContactService {
     public long countContacts() {
         return contactRepository.count();
     }
+    @Override
+    public Contact getContactBycustId(String customerId){
+        contactRepository.getContactBycustId(customerId);
+    }
 }
